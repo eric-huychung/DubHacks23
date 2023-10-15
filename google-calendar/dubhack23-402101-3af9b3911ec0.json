@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "dubhack23-402101",
+  "private_key_id": "3af9b3911ec0544119d4fb7631c10f10cae4a478",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCMnXwxa6PbREMB\nhPTKMFNL4vs7V71bCGtiSOGhswDGjTiTn0YN7nL9Zfww36r828+C6yEYuUebLa2R\nf1YvKGfwIwzkGi/qD+LAwTS7gpXQptCxj5h/cSNNw37xzN1SZEY0LdW+3juRf/3J\nstB3HUm/KaCTlzJ4/oq8qZXV4Pt8m9JI17K6ZsCtWtUtXakFsy+2eiAsk6Rn9cJe\nhPGojkm464dEruFdbn+hNhCCed5KLL8LeeYTHhi6B58Qo5UJRmwkybSX/4IqIFkG\nRbu8JBCpSZ3E3lJBzIXY6ZMXLLdfVxRAdolf7iM1qRVGlYI+giR0UVaKtCjf0XqH\nmt6pZ7LRAgMBAAECggEACZTmpFB3JScQ4M7gRlHGL0bbgzbumIApnxQjydqyfBUd\n7JM/GQ5tR/6V0XfARUQuLvfaNL7VVgnmCKLSatq4QGkHBRkSuEKWWzefIgLbNhFT\n6bGE/PQm6XLfmNbyot1h2kbgSIYIrZi44LBeW6uDfbL2te/o2M1Rg1sT8nPG9z3m\nF5z8Fqs7kEdt5LMDVTGCyfOjDyWmzaxbjCdh/alG6AyDiRoCKUZ9rpcJQ+rCO3jS\npUb58NKUeA9skEebN1tdoEdlJg0iwslx7vzk1/+I69gjA3HwsWj48st4AFKchfEy\nYdH/Nm8v5DXeN4MTQgnQ50OGX/GbAzhMzCTjzmV9RQKBgQDDGvIO1jAa0EhxJoJp\n5XFZBJU0ACjbquXYfRtCJUOyNyu9zdnwKEG5s2zt1DPotkVJRGFE+b0QFmd6QwUI\nFWR3LjMaGTloUawebZBf38geVED9rEXmPwllmvIQzcqtxlTp/+hO30VCGjfLQqJk\n+G2yMxpQ0MZCqvAEWCw9HEGp5QKBgQC4gL3qpo5e7EcbDwuDN2zvExfl+v2gHox7\noRG9jhTyJeAzFEmKeqFGVSi/dBnldMX9X+659g0bdmNFid2UczYnfLMKe6l2pSaG\numzwJyWXtTyDSRSx7W2BKeS3zB72JaSp1BMXlMWx+jjXoT9iZsPsDUhMR/QfHKDp\nmTNjaKTmfQKBgQCe4Lpsyo6xxxq2yZ05jtYWn1zA08Bx4WD6QiaIXsAZyEOedJsc\nriuXhT0XDs6WmpchasWq3ZPQHe516U2Xn5QIWV7TyeatxJRc0uvWpuzXhdTGvhrN\nvFdynhKxDGQXzoIna3VJhRdpFOCKbODBSGxLyMGNPfW1JG3/m62qte/i4QKBgQCC\naSVUHYQWXiXoX1sA1YVe+vzyZtUsf0tG+1Nhy3LMsa7mC9nrUsB5ySmzIapIQKDN\ndih0MxGSrrx+Y3NGQaUuhfq7VysyHIu9wTnNCa6Nq+Ho3hgNp8e1+1mZ/GKKE5Nv\nIuKX0WVnZnkVGPmHYSHs0HqgyF8qOn8Wfl4PTuD3tQKBgDwWPweXpQl0+wmFCtTr\nCQpmS4Z0kQ0US65SXNMeiXguf96BUhAtX/mJZgtBSFLWTcy/mWEonLJW9Kp+6yy8\nKZWKOvNit2TuIcmghsGFlWgN8CgSw2O2fe2J12C3NSFuNiYuYCUt/1OZPXCOVhPy\nbEISyBY0KMIrnRjrhPUPR8e7\n-----END PRIVATE KEY-----\n",
+  "client_email": "testing-google-calendar-api@dubhack23-402101.iam.gserviceaccount.com",
+  "client_id": "103819352253870400175",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/testing-google-calendar-api%40dubhack23-402101.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
