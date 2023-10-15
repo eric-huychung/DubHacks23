@@ -1,4 +1,4 @@
-const {google} = require('googleapis');
+const { google } = require('googleapis');
 require('dotenv').config();
 
 // Provide the required configuration
@@ -7,7 +7,7 @@ const calendarId = process.env.CALENDAR_ID;
 
 // Google calendar API settings
 const SCOPES = 'https://www.googleapis.com/auth/calendar';
-const calendar = google.calendar({version : "v3"});
+const calendar = google.calendar({ version: 'v3' });
 
 const auth = new google.auth.JWT(
     CREDENTIALS.client_email,
@@ -19,9 +19,8 @@ const auth = new google.auth.JWT(
 // Your TIMEOFFSET Offset
 const TIMEOFFSET = '-07:00';
 
-// Get date-time string for calender
+// Get date-time string for calendar
 const dateTimeForCalander = () => {
-
     let date = new Date();
 
     let year = date.getFullYear();
@@ -48,25 +47,24 @@ const dateTimeForCalander = () => {
 
     let startDate = event;
     // Delay in end time is 1
-    let endDate = new Date(new Date(startDate).setHours(startDate.getHours()+1));
+    let endDate = new Date(new Date(startDate).setHours(startDate.getHours() + 1));
 
     return {
         'start': startDate,
         'end': endDate
-    }
+    };
 };
 
 // Insert new event to Google Calendar
 const insertEvent = async (event) => {
-
     try {
         let response = await calendar.events.insert({
             auth: auth,
             calendarId: calendarId,
             resource: event
         });
-    
-        if (response['status'] == 200 && response['statusText'] === 'OK') {
+
+        if (response['status'] === 200 && response['statusText'] === 'OK') {
             return 1;
         } else {
             return 0;
@@ -77,36 +75,8 @@ const insertEvent = async (event) => {
     }
 };
 
- let dateTime = dateTimeForCalander();
-
-let courseName = 'CSE 331';
-let assignmentName = 'HW 1';
-
- // Event for Google Calendar
- let event = {
-     'summary': `${courseName}`,
-     'description': `${assignmentName}. Do your work lazy ass.`,
-     'start': {
-         'dateTime': dateTime['start'],
-         'timeZone': 'America/Los_Angeles'
-     },
-     'end': {
-         'dateTime': dateTime['end'],
-         'timeZone': 'America/Los_Angeles'
-     }
- };
-
- insertEvent(event)
-     .then((res) => {
-         console.log(res);
-     })
-     .catch((err) => {
-         console.log(err);
-     });
-
 // Get all the events between two dates
 const getEvents = async (dateTimeStart, dateTimeEnd) => {
-
     try {
         let response = await calendar.events.list({
             auth: auth,
@@ -115,7 +85,7 @@ const getEvents = async (dateTimeStart, dateTimeEnd) => {
             timeMax: dateTimeEnd,
             timeZone: 'Asia/Kolkata'
         });
-    
+
         let items = response['data']['items'];
         return items;
     } catch (error) {
@@ -124,47 +94,46 @@ const getEvents = async (dateTimeStart, dateTimeEnd) => {
     }
 };
 
- let start = '2023-10-03T00:00:00.000Z';
- let end = '2023-10-04T00:00:00.000Z';
+// Export the function to be called from the main file
+module.exports = {
+    processData: (name, due_at) => {
+        let dateTime = dateTimeForCalander();
 
- getEvents(start, end)
-     .then((res) => {
-         console.log(res);
-     })
-     .catch((err) => {
-         console.log(err);
-     });
+        let courseName = name;
+        let assignmentName = due_at;
 
-/*
-// Delete an event from eventID
-const deleteEvent = async (eventId) => {
+        // Event for Google Calendar
+        let event = {
+            'summary': `${courseName}`,
+            'description': `${assignmentName}. Do your work lazy ass.`,
+            'start': {
+                'dateTime': dateTime['start'],
+                'timeZone': 'America/Los_Angeles'
+            },
+            'end': {
+                'dateTime': dateTime['end'],
+                'timeZone': 'America/Los_Angeles'
+            }
+        };
 
-    try {
-        let response = await calendar.events.delete({
-            auth: auth,
-            calendarId: calendarId,
-            eventId: eventId
-        });
+        insertEvent(event)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
 
-        if (response.data === '') {
-            return 1;
-        } else {
-            return 0;
-        }
-    } catch (error) {
-        console.log(`Error at deleteEvent --> ${error}`);
-        return 0;
+        // Get all the events between two dates
+        let start = '2023-10-03T00:00:00.000Z';
+        let end = '2023-10-04T00:00:00.000Z';
+
+        getEvents(start, end)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 };
-
-let eventId = 'hkkdmeseuhhpagc862rfg6nvq4';
-
-deleteEvent(eventId)
-    .then((res) => {
-        console.log(res);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
-
-*/
